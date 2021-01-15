@@ -10,7 +10,7 @@ fi
 
 function usage
 {
-    echo "usage: xva-convert -f image_format -x xva_file [-o || -h]"
+    echo "usage: xva-convert -f image_format -x xva_file [-o OUTPUT || -h]"
     echo "   ";
     echo "  -x | --xva-file          : XVA file";
     echo "  -f | --image-format      : img / qcow2";

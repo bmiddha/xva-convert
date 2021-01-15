@@ -5,7 +5,7 @@ set -e
 
 function usage
 {
-    echo "usage: download-xva -h XEN_HOST -i UUID [-n VM_NAME || -d EXPORT_DIR || -h]"
+    echo "usage: download-xva -x XEN_HOST -u UUID [ -o OUTPUT || -h]"
     echo "   ";
     echo "  -x | --xen-host          : XEN Host";
     echo "  -u | --uuid              : VM/Snapshot UUID";

@@ -5,8 +5,10 @@
 ### Find VM/Snapshot UUID
 
 ```bash
-$ ssh xen.example.com   # ssh into xen host
-$ xe vm-list     # list vms, find vm id that needs to be exported
+# ssh into xen host
+$ ssh xen.example.com
+# list vms, find vm id that needs to be exported
+$ xe vm-list
 uuid ( RO)           : 5675265a-bdb4-b3d2-05dd-1d03caa0af38
      name-label ( RW): test-store4
     power-state ( RO): halted
@@ -35,7 +37,7 @@ $ xe vm-snapshot vm=<uuid> new-name-label=<vm_snapshot_name>
 
 ```bash
 $ xva-convert/download-xva.sh -h
-usage: download-xva -h XEN_HOST -i UUID [-n VM_NAME || -d EXPORT_DIR || -h]
+usage: download-xva -x XEN_HOST -u UUID [ -o OUTPUT || -h]
 
   -x | --xen-host          : XEN Host
   -u | --uuid              : VM/Snapshot UUID
@@ -69,17 +71,17 @@ xe vm-export vm=<VM_UUID/SNAPSHOT_UUID> filename=vm.xva
 ### `xva` ➡ `qcow2`
 
 ```bash
-$ xva-convert/xva-to-qcow.sh --help
+$ xva-convert/xva-convert.sh --help
 Please run as root/sudo
-$ sudo xva-convert/xva-to-qcow.sh --help
-usage: xva-convert -f image_format -x xva_file [-o || -h]
+$ sudo xva-convert/xva-convert.sh --help
+usage: xva-convert -f image_format -x xva_file [-o OUTPUT || -h]
 
   -x | --xva-file          : XVA file
   -f | --image-format      : img / qcow2
   -o | --output            : output image path
   -h | --help              : This message
-# sudo xva-convert/xva-to-qcow.sh -x XVA_FILE -f FORMAT
-$ sudo xva-convert/xva-to-qcow.sh -x nfs_1.xva -f qcow2
+# sudo xva-convert/xva-convert.sh -x XVA_FILE -f FORMAT
+$ sudo xva-convert/xva-convert.sh -x nfs_1.xva -f qcow2
 #######################################################
 xva_file     : nfs_1.xva
 image_format : qcow2
