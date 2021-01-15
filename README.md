@@ -1,5 +1,7 @@
 # xva-convert
 
+Scripts to export and convert XVA Virtual Machine images to qcow2 or img(raw) images.
+
 ## How to use
 
 ### Find VM/Snapshot UUID
